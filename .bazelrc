@@ -1,0 +1,4 @@
+build --enable_workspace
+query --enable_workspace
+fetch --enable_workspace
+test --enable_workspace 
