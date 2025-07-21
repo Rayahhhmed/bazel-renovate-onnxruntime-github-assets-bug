@@ -1,13 +1,36 @@
 module.exports = {   
   requireConfig: "ignored",
   onboarding: false,
-  // platform: "github",
+  platform: "github",
+  repositories: ["Rayahhhmed/bazel-renovate-onnxruntime-github-assets-bug"],
   persistRepoData: true,
   baseBranches: ["main"],
   addLabels: ["renovate"],
   branchConcurrentLimit: 0,
-  prConcurrentLimit : 0,
+  prConcurrentLimit: 0,
   prHourlyLimit: 0,
-  enabledManagers: ["bazel", "bazel-module", "custom.regex"],
-  repositories: ["Rayahhhmed/bazel-renovate-onnxruntime-github-assets-bug"],
+  enabledManagers: ["bazel", "bazel-module"],
+  includePaths: [
+    "MODULE.bazel",
+    "WORKSPACE",
+  ],
+  "bazel": {
+    fileMatch: [
+      "(^|/)WORKSPACE$",
+      "(^|/)WORKSPACE\\.bazel$", 
+      "\\.bzl$"
+    ],
+  },
+  "bazel-module": {
+    fileMatch: [
+      "(^|/)MODULE\\.bazel$"
+    ],
+  },
+  packageRules: [
+    {
+      matchManagers: ["bazel"],
+      matchPackageNames: ["onnxruntime"],
+      extractVersion: "^v(?<version>.*)$"
+    }
+  ]
 }
