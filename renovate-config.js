@@ -4,6 +4,8 @@ module.exports = {
   platform: "github",
   repositories: ["Rayahhhmed/bazel-renovate-onnxruntime-github-assets-bug"],
   gitUrl: "https",
+  gitAuthor: "renovate[bot] <29139614+renovate[bot]@users.noreply.github.com>",
+  gitIgnoredAuthors: [],
   persistRepoData: true,
   baseBranches: ["main"],
   addLabels: ["renovate"],
@@ -15,11 +17,14 @@ module.exports = {
     "MODULE.bazel",
     "WORKSPACE",
   ],
+  ignorePaths: [
+    "**/node_modules/**",
+    "**/bazel-*/**",
+  ],
   "bazel": {
     fileMatch: [
       "(^|/)WORKSPACE$",
-      "(^|/)WORKSPACE\\.bazel$", 
-      "\\.bzl$"
+      "(^|/)WORKSPACE\\.bazel$"
     ],
   },
   "bazel-module": {
