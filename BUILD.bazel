@@ -1,4 +1,4 @@
-load("@rules_cc//cc:defs.bzl", "cc_library", "cc_binary")
+# load("@rules_cc//cc:defs.bzl", "cc_library", "cc_binary")
 
 # Test library that depends on ONNX Runtime
 cc_library(
