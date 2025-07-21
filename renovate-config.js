@@ -3,6 +3,7 @@ module.exports = {
   onboarding: false,
   platform: "github",
   repositories: ["Rayahhhmed/bazel-renovate-onnxruntime-github-assets-bug"],
+  gitUrl: "https",
   persistRepoData: true,
   baseBranches: ["main"],
   addLabels: ["renovate"],
@@ -26,11 +27,4 @@ module.exports = {
       "(^|/)MODULE\\.bazel$"
     ],
   },
-  packageRules: [
-    {
-      matchManagers: ["bazel"],
-      matchPackageNames: ["onnxruntime"],
-      extractVersion: "^v(?<version>.*)$"
-    }
-  ]
 }
