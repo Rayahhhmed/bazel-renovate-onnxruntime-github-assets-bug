@@ -7,4 +7,4 @@
 
 module(name = "onnxruntime_test")
 
-bazel_dep(name = "rules_cc", version = "0.1.1")
+bazel_dep(name = "rules_cc", version = "0.1.4")
